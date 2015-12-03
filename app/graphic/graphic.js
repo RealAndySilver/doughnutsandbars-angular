@@ -28,9 +28,9 @@
     }]);
 
 	app.directive('graphic', function() {
-		var green = '#76ba0a';
-		var orange = '#ffb702';
-		var darkGray = '#3b3b3b';
+		var green = {hex:'#76ba0a', name:'green'};
+		var orange = {hex:'#ffb702', name:'orange'};
+		var darkGray = {hex:'#3b3b3b', name:'darkGray'};
 		var primaryColor = '';
 		var secondaryColor = '';
 		
@@ -51,25 +51,25 @@
 			
 			link: function(scope, element, attrs) {
 				scope.$watch('options', function(newValue,oldValue){
-					if(	scope.options.theme != 'greenCard' &&
-						scope.options.theme != 'orangeCard'&&
-						scope.options.theme != 'darkGrayCard')
+					if(	scope.options.theme != 'green' &&
+						scope.options.theme != 'orange'&&
+						scope.options.theme != 'darkGray')
 					{
-						scope.options.theme = 'greenCard';
+						scope.options.theme = 'green';
 					}
 					primaryColor =
-									scope.options.theme == "greenCard" ? green : 
-									scope.options.theme == "orangeCard" ? orange :
-									scope.options.theme == "darkGrayCard" ? darkGray : green;
+									scope.options.theme == "green" ? green.name : 
+									scope.options.theme == "orange" ? orange.name :
+									scope.options.theme == "darkGray" ? darkGray.name : green.name;
 					
 					secondaryColor = '#eeeeee';
 										
 					scope.cardClass = {};
-					scope.cardClass.floatLeft = true;
-					scope.cardClass.header = true;
-					scope.cardClass[scope.options.theme] = true;
+					scope.bgColor = {};
+					scope.textColor = {};
+					scope.textColor[scope.options.theme+'Text'] = true;
+					scope.bgColor[scope.options.theme+'Bg'] = true;
 					scope.cardClass.shadow = scope.options.shadow;
-					scope.cardClass['overflow-x-hidden'] = true;
 					scope.colours = [primaryColor, secondaryColor,primaryColor, secondaryColor];
 					scope.datax = scope.datai;
 					console.log('Datax: ',scope.datax);

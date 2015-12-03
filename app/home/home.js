@@ -40,21 +40,21 @@
 		$scope.graphicOptions1 = {
 			type:"orangeCard", 
 			shadow:true, 
-			theme:"orangeCard", 
+			theme:"orange", 
 			img:"http://yara.co.uk/images/430-43529CORRECT%20%20Banner%20Image%20Environment.png"
 		};
 		
 		$scope.graphicOptions2 = {
 			type:"greenCard", 
 			shadow:true, 
-			theme:"greenCard" , 
+			theme:"green" , 
 			img:"http://www.ei1.com/images/ih_icon.png"
 		};
 		
 		$scope.graphicOptions3 = {
-			type:"greenCard", 
+			type:"darkGrayCard", 
 			shadow:true, 
-			theme:"darkGrayCard" , 
+			theme:"darkGray" , 
 			img:"http://www.e2cbms.com/images/1_e2c/Breathe_ActionIcons_v2-11.png"
 		};
 

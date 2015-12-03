@@ -15,34 +15,57 @@
 	color : #76ba0a;
 	
 }
-
-.orangeCard{
+.card{
 	width: 250px;
 	height: 330px;
 	background: white;
+	color : #76ba0a;
+	overflow-x : hidden;
+	display: inline-block;
+	margin-right: 15px;
 	.header {
 		width: inherit;
 		height: 15%;
 		padding-top: 18px;
 	}
-	.bgColor{
-		background: #ffb702;
-	}
-	color : #ffb702;
 }
 
-.darkGrayCard{
-	width: 250px;
-	height: 330px;
-	background: white;
-	.header {
-		width: inherit;
-		height: 15%;
-		padding-top: 18px;
-	}
-	.bgColor{
-		background: #3b3b3b;
-	}
+.orangeBg{
+	background: #ffb702;
+}
+.darkGrayBg{
+	background: #3b3b3b;
+}
+.greenBg{
+	background: #76ba0a;
+}
+
+.bottomTitle{
+	font-size: 18px;
+	width: 90%;
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+	font-weight: 500;
+	position: static;
+}
+
+.bottomSubTitle{
+	font-size: 12px;
+	width: 90%;
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+	font-weight: 300;
+	color : #333;
+}
+.greenText{
+	color : #76ba0a;
+}
+.orangeText{
+	color : #ffb702;
+}
+.darkGrayText{
 	color : #3b3b3b;
 }
 
@@ -71,9 +94,9 @@
 	overflow-x: hidden;
 }
 
-.floatLeft {
+.inlineBlock {
 	display: inline-block;
-	margin-right: 20px;
+	margin-right: 50px;
 }
 
 .bottomTitle{

@@ -1,5 +1,5 @@
 <div class="card" ng-class="cardClass">
-	<div class="bgColor header ">
+	<div class="header" ng-class="bgColor">
 		<div class="headerLabel">{{cardname}}</div>
 		
 	<div class="graphContainer">
@@ -8,6 +8,6 @@
 			</canvas>
 			<div class="graphic-image"><img src="{{options.img}}" width="90" height="90"></div>
 	</div>
-	<div class="bottomTitle">{{bottomtitle}}</div>
+	<div class="bottomTitle" ng-class="textColor">{{bottomtitle}}</div>
 	<div class="bottomSubTitle">{{bottomsubtitle}}</div>
 </div>
