@@ -37,25 +37,80 @@
 		$scope.series = ['Series A', 'Series B', 'Series C'];
 		$scope.datax = [65, 59, 80, 81, 56, 55, 40];
 		
-		$scope.graphicOptions1 = {
-			type:"orangeCard", 
-			shadow:true, 
-			theme:"orange", 
-			img:"http://yara.co.uk/images/430-43529CORRECT%20%20Banner%20Image%20Environment.png"
+		$scope.options1 = {
+			css : {
+				type:"orangeCard", 
+				shadow:true, 
+				theme:"orange", 
+				img:"http://yara.co.uk/images/430-43529CORRECT%20%20Banner%20Image%20Environment.png",
+			},
+			chart : {
+				percentageInnerCutout:75,
+				animation: false,
+				animateScale : false,
+				animationSteps : 100,
+				//animationEasing : "",
+				onAnimationProgress: function(){ 
+					//console.log('Animating dude');
+				},
+				onAnimationComplete: function(){
+					
+				},
+				showTooltips : false,
+				multiTooltipTemplate: "<%= value %>",
+				tooltipFontColor: "#fff"
+			}
 		};
 		
-		$scope.graphicOptions2 = {
-			type:"greenCard", 
-			shadow:true, 
-			theme:"green" , 
-			img:"http://www.ei1.com/images/ih_icon.png"
+		$scope.options2 = {
+			css : {
+				type:"greenCard", 
+				shadow:true, 
+				theme:"green" , 
+				img:"http://www.ei1.com/images/ih_icon.png"
+			},
+			chart : {
+				percentageInnerCutout:75,
+				animation: false,
+				animateScale : false,
+				animationSteps : 100,
+				//animationEasing : "",
+				onAnimationProgress: function(){ 
+					//console.log('Animating dude');
+				},
+				onAnimationComplete: function(){
+					
+				},
+				showTooltips : false,
+				multiTooltipTemplate: "<%= value %>",
+				tooltipFontColor: "#fff"
+			}
+			
 		};
 		
-		$scope.graphicOptions3 = {
-			type:"darkGrayCard", 
-			shadow:true, 
-			theme:"darkGray" , 
-			img:"http://www.e2cbms.com/images/1_e2c/Breathe_ActionIcons_v2-11.png"
+		$scope.options3 = {
+			css : {
+				type:"darkGrayCard", 
+				shadow:true, 
+				theme:"darkGray" , 
+				img:"http://www.e2cbms.com/images/1_e2c/Breathe_ActionIcons_v2-11.png"
+			},
+			chart : {
+				percentageInnerCutout:75,
+				animation: false,
+				animateScale : false,
+				animationSteps : 100,
+				//animationEasing : "",
+				onAnimationProgress: function(){ 
+					//console.log('Animating dude');
+				},
+				onAnimationComplete: function(){
+					
+				},
+				showTooltips : false,
+				multiTooltipTemplate: "<%= value %>",
+				tooltipFontColor: "#fff"
+			}
 		};
 
         init();
