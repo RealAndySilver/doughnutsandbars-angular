@@ -1,0 +1,48 @@
+<div class="barsCard" ng-class="cardClass">
+	<span class="header">
+		<div class="left">
+			<div class="barsHeaderLabel">{{chart.text.title}}</div>
+		</div>
+		<div class="right">
+			<span ng-repeat="serie in chart.chartData.series track by $index">
+				<div class="labels">
+					<div class="square" ng-style="{background:chart.chartData.colors[$index]}">
+					</div>
+					<div class="text">
+						{{chart.chartData.series[$index]}} 
+					</div>
+				</div>
+			</span>
+		</div>
+	</span>
+	<div class="barContainer" id="bar-chart">
+        <div class="panel-default">
+            <div class="panel-body">
+                <div class="chart-container">
+	                <canvas id="bar" class="chart chart-bar"
+			        chart-data="data" chart-labels="labels" chart-series="series" 
+					chart-colours="colours"
+					options="{ 
+					  			scaleShowGridLines : false,
+					  			showScale: true, 
+					  			responsive:true, 
+					  			scaleShowLabels: false,
+					  			barDatasetSpacing : 0,
+					  			scaleGridLineWidth : 1,
+					  			scaleLineWidth: 0.01,
+					  			barShowStroke : false,
+					  			showTooltips: false
+					  			}">
+					</canvas>
+	          	</div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+	    <div class="rotatedSquare"></div>
+	    <div class="title">{{chart.text.sidebarTitle}}</div>
+		<div class="subtitle">{{chart.text.sidebarSubtitle}}</div>
+    </div>
+		
+</div>
+

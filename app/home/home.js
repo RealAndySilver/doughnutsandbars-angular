@@ -10,13 +10,11 @@
 				}
             },
             data: { 
-				pageTitle: 'Bars' 
+				pageTitle: 'Donuts and Bars' 
 			}
         });
     });
 
-    // As you add controllers to a module and they grow in size, feel free to place them in their own files.
-    //  Let each module grow organically, adding appropriate organization and sub-folders as needed.
     app.controller('HomeController', function ($scope) {
 
         var init = function() {
@@ -24,26 +22,44 @@
         };
 		
 		$scope.chart1 = {
+			//Basic CSS Options
 			css : {
+				//Boolean - defines shadow for the card
 				shadow:true, 
+				//String - Theme colors available: green, orange, darkGray, blue
 				theme:"orange", 
-				img:"http://wcdn2.dataknet.com/static/resources/icons/set109/3b9a43ea.png",
-				type: 'multi'
+				//String - Global url
+				img:"http://iconbug.com/data/8e/256/fc0af5e13220535a8eef6d0f1b81ea6f.png",
+				//String - Type can be reg or multi. multi shows labels on bottom
+				type: 'reg'
 			},
+			//Visual options for the chart
 			chartOptions : {
+				//Number - Defines inner cutout for the donut chart. The higher the number, thinest the line
 				percentageInnerCutout:75,
+				//Boolean - for showing animation
 				animation: true,
+				//Boolean - for scaling animation
 				animateScale : true,
+				//Boolean - for showing tooltip
 				showTooltips : false
 			},
+			//Chart information
 			chartData : {
+				//Array - only numbers should be added
 				data : [20, 10, 40, 30, 56, 55, 40],
+				//Array - only strings should be added
 				labels : ['Series A', 'Series B'],
+				//Array - only strings with hex colors should be added
 				colors : ['#dfdfdf','#a0a0a0', '#ffb702', '#ff0A00']
 			},
+			//General Texts
 			text : {
+				//String - Title for the card
 				title : 'Lost Energy Costs',
+				//String - Title for the bottom of the card
 				bottomTitle : '$213,557',
+				//String - Subtitle for the bottom of the card
 				bottomSubtitle : 'GOAL $300,000'
 			}
 		};
@@ -77,7 +93,7 @@
 		$scope.chart3 = {
 			css : {
 				shadow:true, 
-				theme:"blue" , 
+				theme:"green" , 
 				img:"http://www.e2cbms.com/images/1_e2c/Breathe_ActionIcons_v2-11.png"
 			},
 			chartOptions : {
@@ -95,6 +111,35 @@
 				title : 'CO2 Emissions',
 				bottomTitle : '455 LB/HR',
 				bottomSubtitle : 'GOAL 500 LB/HR'
+			}
+		};
+		
+		$scope.chart4 = {
+			css : {
+				shadow:true, 
+				theme:"blue" ,
+				img:"http://www.e2cbms.com/images/1_e2c/Breathe_ActionIcons_v2-11.png"
+			},
+			chartOptions : {
+				percentageInnerCutout:75,
+				animation: true,
+				animateScale : true,
+				showTooltips : false
+			},
+			chartData : {
+				data : [
+				[65, 59, 80, 81, 56, 55, 40,81, 56, 55, 40,10],
+				[28, 48, 40, 19, 86, 27, 90,81, 56, 55, 40,20],
+				[100, 100, 100, 100, 100, 100, 100, 100, 100, 100,100,100]
+				],
+				labels : ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+				series : ['BLOW THRU TRAP', 'COLD TRAP'],
+				colors : ['#469de0','#ce625a','#dddddd']
+			},
+			text : {
+				title : 'Steam Trap Status Over Time and Energy Loss',
+				sidebarTitle : '$213.557',
+				sidebarSubtitle : 'Energy Loss'
 			}
 		};
 

@@ -1,33 +1,97 @@
 /* Less file for graphic*/
-
-.greenCard{
-	width: 250px;
-	height: 330px;
-	background: white;
-	.header {
-		width: inherit;
-		height: 15%;
-		padding-top: 18px;
-	}
-	.bgColor{
-		background: #76ba0a;
-	}
-	color : #76ba0a;
-	
-}
-.card{
+.donutCard{
 	width: 250px;
 	height: 330px;
 	background: white;
 	color : #76ba0a;
 	overflow-x : hidden;
 	display: inline-block;
-	margin-right: 15px;
+	margin-right: 10px;
+	margin-bottom: 10px;
 	.header {
 		width: inherit;
 		height: 15%;
-		padding-top: 18px;
+		padding-top: 17px;
 	}
+}
+
+.barsCard{
+	width: 778px;
+	height: 400px;
+	background: white;
+	color : #76ba0a;
+	overflow-x : hidden;
+	display: inline-block;
+	margin-right: 15px;
+	overflow-y: hidden;
+	.header{
+		.left {
+			width: 55%;
+			height: 15%;
+			padding-top: 17px;
+			float: left;
+		}
+		.right {
+			width: 45%;
+			height: 15%;
+			padding-top: 20px;
+			float: right;
+		}
+		.labels{
+			margin-left: 10px;
+			.square{
+				width: 15px;
+				height: 15px;
+				float: left;
+				margin-left: 10px;
+			}
+			.text{
+				float: left;
+				font-size: 8px;
+				color: #333;
+				margin-top: 2.5px;
+				margin-left: 2px;
+			}
+		}
+	}
+	.barContainer{
+		width: 640px;
+		margin: 0;
+		//display: inline-block;
+		float: left;
+	}
+	.sidebar{
+		//display: inline-block;
+		width: 110px;
+		background: #4c4c4c;
+		height: 53px;
+		float: left;
+		font-size: 14px;
+		padding-top: 5px;
+		margin-top: 27px;
+		.title{
+			color: white;
+			width: 80%;
+			margin: 0 auto;
+		}
+		.subtitle{
+			color: white;
+			width: 80%;
+			margin: 0 auto;
+		}
+		.rotatedSquare{
+			width: 10px;
+			height: 10px;
+			position: fixed;
+			margin-left: -5px;
+			margin-top: -3px;
+			background: #4c4c4c;
+			-ms-transform: rotate(45deg); /* IE 9 */
+		    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+		    transform: rotate(45deg);
+		}
+	}
+	
 }
 
 .orangeBg{
@@ -74,7 +138,7 @@
 .blueText{
 	color : #31a9ef;
 }
-.headerLabel{
+.donutsHeaderLabel{
 	font-family: 'Helvetica';
 	font-weight: 1000;
 	font-size: 16px;
@@ -83,13 +147,34 @@
 	color: white;
 	display: inline-block;
 }
+.barsHeaderLabel{
+	font-family: 'Helvetica';
+	font-weight: 1000;
+	font-size: 16px;
+	margin-left: 15px;
+	width: 400px;
+	color: #5b5b5b;
+	display: inline-block;
+}
 
-.graphContainer{
+.colors{
+	color: rgba(0, 102, 209, 0.98);
+	color: #469de0;
+	color: rgba(176, 23, 23, 0.97);
+	color: #ce625a;
+}
+
+.donutContainer{
 	margin-top: 20px;
 	width: 380px;
-	height: 250;
 	margin-left: -63px;
 	position: relative;
+}
+.barsContainer{
+	margin-top: 20px;
+	margin-left: 20px;
+	width: 600px;
+	height: 300px;
 }
 
 .shadow{
