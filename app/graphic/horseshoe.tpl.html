@@ -1,0 +1,30 @@
+<div class="donutCard" ng-class="cardClass">
+	<div class="header" ng-class="bgColor">
+		<div class="donutsHeaderLabel">{{chart.text.title}}</div>
+		
+	<div class="donutContainer">
+		<div ng-class="goalLine"><span class="text">{{chart.text.goalTitle}}</span></div>
+			<div class="graphic-image"><img src="{{chart.css.img}}" width="90" height="90"></div>
+			
+			<canvas id="doughnut" class="chart chart-doughnut rotate"
+			  chart-data="data" chart-labels="labels" chart-options="chart.chartOptions" chart-colours="colours">
+			</canvas>
+			
+	</div>
+	<div class="bottomTitle" ng-class="textColor">{{chart.text.bottomTitle}}</div>
+	<div class="bottomSubTitle">{{chart.text.bottomSubtitle}}</div>
+	<span ng-if="chart.css.type=='multi'">
+		<div class="bottomLabelsWrapper">
+			<span ng-repeat="label in chart.chartData.labels track by $index">
+				<div class="bottomLabel">
+					<div class="square" ng-style="{background:colours[$index]}">
+					</div>
+					<div class="text">
+						{{chart.chartData.labels[$index]}} 
+					</div>
+				</div>
+			</span>
+		</div>
+		
+	</span>
+</div>

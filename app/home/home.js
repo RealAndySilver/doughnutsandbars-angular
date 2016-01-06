@@ -41,17 +41,17 @@
 				animation: true,
 				//Boolean - for scaling animation
 				animateScale : true,
-				//Boolean - for showing tooltip
-				showTooltips : false
+				//Boolean - for showing goal line
+				showGoalLine : true,
 			},
 			//Chart information
 			chartData : {
 				//Array - only numbers should be added
-				data : [20, 10, 40, 30, 56, 55, 40],
+				data : [2000, 500,6000,7000],
 				//Array - only strings should be added
 				labels : ['Series A', 'Series B'],
 				//Array - only strings with hex colors should be added
-				colors : ['#dfdfdf','#a0a0a0', '#ffb702', '#ff0A00']
+				colors : ['#ffb702','#dfdfdf', '#ffffff', '#ff0A00']
 			},
 			//General Texts
 			text : {
@@ -60,7 +60,9 @@
 				//String - Title for the bottom of the card
 				bottomTitle : '$213,557',
 				//String - Subtitle for the bottom of the card
-				bottomSubtitle : 'GOAL $300,000'
+				bottomSubtitle : 'GOAL $300,000',
+				//String - Title for goal line in the chart
+				goalTitle : 'Goal',
 			}
 		};
 		
