@@ -22,7 +22,6 @@
 		
 		var linkFunction = function(scope, element, attrs) {
 			scope.$watch('chart', function(newValue,oldValue){
-				
 				if(	scope.chart.css.theme != 'green' &&
 					scope.chart.css.theme != 'orange'&&
 					scope.chart.css.theme != 'darkGray' &&
@@ -47,7 +46,7 @@
 				scope.data = scope.chart.chartData.data;
 				scope.labels = scope.chart.chartData.labels;
 				scope.type = scope.chart.css.type;
-			});
+			},true);
 		};
 		
 		return {
@@ -77,14 +76,16 @@
 		var counter = 0;
 		var total = 0;
 		var linkFunction = function(scope, element, attrs) {
+			scope.chart.chartOptions.showTooltips = false;
+			
 			scope.$watch('chart', function(newValue,oldValue){
-				
-				if(	scope.chart.css.theme != 'green' &&
-					scope.chart.css.theme != 'orange'&&
-					scope.chart.css.theme != 'darkGray' &&
-					scope.chart.css.theme != 'blue')
+				scope.css = scope.chart.css;
+				if(	scope.css.theme != 'green' &&
+					scope.css.theme != 'orange'&&
+					scope.css.theme != 'darkGray' &&
+					scope.css.theme != 'blue')
 				{
-					scope.chart.css.theme = 'green';
+					scope.css.theme = 'green';
 				}				
 				
 				themeColor =
@@ -100,29 +101,35 @@
 				scope.textColor[themeColor.name+'Text'] = true;
 				scope.bgColor[themeColor.name+'Bg'] = true;
 				scope.cardClass.shadow = scope.chart.css.shadow;
-				scope.chart.chartOptions.showTooltips = false;
-				
-				scope.goalLine['goalLine'] = scope.chart.chartOptions.showGoalLine ? scope.chart.chartOptions.showGoalLine : false;
-				scope.colours = [themeColor.hex, themeColor.secondaryHex, themeColor.thirdHex];
-				if(scope.chart.chartData.data.length>2){
-					scope.chart.chartData.data.splice(2,scope.chart.chartData.data.length-2);
-				}
-				if(scope.chart.chartData.labels.length>2){
-					scope.chart.chartData.labels.splice(2,scope.chart.chartData.labels.length-2);
-				}
-				
-				for(var index in scope.chart.chartData.data){
-					console.log(scope.chart.chartData.data[index]);
-					counter +=scope.chart.chartData.data[index];
-				}
-				total = counter*(1/3);
-				scope.chart.chartData.data.splice(scope.chart.chartData.labels.length, 0, total);
-				scope.chart.chartData.labels.push('');
 				
 				scope.data = scope.chart.chartData.data;
 				scope.labels = scope.chart.chartData.labels;
 				scope.type = scope.chart.css.type;
-			});
+				scope.text = scope.chart.text;
+				scope.chartOptions = scope.chart.chartOptions;
+				scope.goalLine['goalLine'] = scope.chart.chartOptions.showGoalLine ? scope.chart.chartOptions.showGoalLine : false;
+				if(!scope.goalLine['goalLine']){
+					scope.text.goalTitle = '';
+				}
+				scope.colours = [themeColor.hex, themeColor.secondaryHex, themeColor.thirdHex];
+				if(scope.data.length>2){
+					scope.data.splice(2,scope.data.length-2);
+				}
+				
+				if(scope.labels.length>2){
+					scope.labels.splice(2,scope.labels.length-2);
+				}
+				for(var index in scope.data){
+					counter +=scope.data[index];
+				}
+				total = counter*(1/3);
+				scope.data.push(total);
+				scope.labels.push('');
+
+				counter = total = 0;
+				
+				
+			}, true);
 		};
 		
 		return {
@@ -144,15 +151,16 @@
 		var blue = {hex:'#31a9ef', name:'blue', secondaryHex:'#eeeeee'};
 		var orange = {hex:'#ffb702', name:'orange', secondaryHex:'#eeeeee'};
 		var darkGray = {hex:'#3b3b3b', name:'darkGray', secondaryHex:'#eeeeee'};
-		
 		var themeColor = '';
 		var themeNames = ['green', 'orange', 'darkGray', 'blue'];
 		var secondaryColor = '';
 		var themeArray = [green, orange, darkGray, blue];
-		
+		var containerHeight = 305*0.88;
 		var linkFunction = function(scope, element, attrs) {
+			scope.privatechart = {};
+			angular.copy(scope.chart,scope.privatechart);
 			scope.$watch('chart', function(newValue,oldValue){
-				
+				//angular.copy(scope.chart,scope.privatechart);
 				if(	scope.chart.css.theme != 'green' &&
 					scope.chart.css.theme != 'orange'&&
 					scope.chart.css.theme != 'darkGray' &&
@@ -175,15 +183,21 @@
 				scope.cardClass.shadow = scope.chart.css.shadow;
 				scope.colours = [];
 				for(var color in scope.chart.chartData.colors){
-					console.log('Color: ',color);
 					scope.colours.push({fillColor:scope.chart.chartData.colors[color]});
 				}
+				scope.dashedStyle = {
+					marginTop : (12+(containerHeight-((scope.chart.chartData.goal/100)*(containerHeight))))+'px',
+				};
 				//scope.colours = scope.chart.chartData.labels.length > 2 ? scope.chart.chartData.colors : [themeColor.hex, themeColor.secondaryHex];
+				if(scope.chart.chartData.goal){
+					scope.goalTitle = scope.chart.chartData.goal+'% '+scope.chart.text.dashedLineTitle;
+				}
 				scope.labels = scope.chart.chartData.labels;
 				scope.type = scope.chart.css.type;
 				scope.series = scope.chart.chartData.series;
 				scope.data = scope.chart.chartData.data;
-			});
+				scope.trendData = scope.chart.chartData.trendData;
+			}, true);
 		};
 		
 		return {

@@ -42,7 +42,7 @@
 				//Boolean - for scaling animation
 				animateScale : true,
 				//Boolean - for showing goal line
-				showGoalLine : true,
+				showGoalLine : false,
 			},
 			//Chart information
 			chartData : {
@@ -70,7 +70,7 @@
 			css : {
 				shadow:true, 
 				theme:"green" , 
-				img:"http://www.ei1.com/images/ih_icon.png",
+				img:"http://marinam.tngconsulting.ca/wp-content/uploads/2015/06/marinamilette_sass.png",
 				type: 'multi'
 			},
 			chartOptions : {
@@ -126,25 +126,67 @@
 				percentageInnerCutout:75,
 				animation: true,
 				animateScale : true,
-				showTooltips : false
+				showTooltips : false,
+				//Boolean - for showing goal line
+				showDashedLine : false,
 			},
 			chartData : {
 				data : [
-				[65, 59, 80, 81, 56, 55, 40,81, 56, 55, 40,10],
-				[28, 48, 40, 19, 86, 27, 90,81, 56, 55, 40,20],
+				[50, 59, 80, 81, 56, 55, 40,81, 56, 55, 40,10],
+				[25, 48, 40, 100, 86, 27, 90,81, 56, 55, 40,20],
 				[100, 100, 100, 100, 100, 100, 100, 100, 100, 100,100,100]
-				],
+				], 
+				trendData : [[15, 20, 30, 40, 50, 60, 70, 80, 90, 95, 98,10]],
 				labels : ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
-				series : ['BLOW THRU TRAP', 'COLD TRAP'],
-				colors : ['#469de0','#ce625a','#dddddd']
+				series : ['BLOW THRU TRAP', 'COLD TRAP','GOOD TRAPS'],
+				colors : ['#469de0','#ce625a','#dddddd'],
+				goal : 50
 			},
 			text : {
 				title : 'Steam Trap Status Over Time and Energy Loss',
 				sidebarTitle : '$213.557',
-				sidebarSubtitle : 'Energy Loss'
+				sidebarSubtitle : 'Energy Loss',
+				dashedLineTitle : 'Goal Good Traps',
 			}
 		};
-
+		var aja = true;
+		$scope.test1 = function(){
+			console.log('siso');
+			if(aja){
+				aja=false;
+				$scope.chart2.chartData.data= [25, 48, 40, 100, 86, 27, 90,81, 56, 55, 40,20];
+						$scope.chart2.text.title = 'Holi';
+			}
+			else{
+				aja=true;
+				$scope.chart1.chartData.data= [50, 59, 80, 81, 56, 55, 40,81, 56, 55, 40,10];
+						$scope.chart1.text.title = 'Chau';
+			}
+		};
+		$scope.test = function(){
+			console.log('siso');
+			if(aja){
+				$scope.chart4.chartData.goal =100;
+				aja=false;
+				$scope.chart4.chartData.trendData =	[[25, 48, 40, 100, 86, 27, 90,81, 56, 55, 40,20]];
+				$scope.chart4.chartData.data=
+			[[25, 48, 40, 100, 86, 27, 90,81, 56, 55, 40,20],
+			[100, 100, 100, 100, 100, 100, 100, 100, 100, 100,100,100]];
+						$scope.chart4.text.sidebarTitle = 'Holi';
+			}
+			else{
+				$scope.chart4.chartData.goal =50;
+				aja=true;
+				$scope.chart4.chartData.trendData =	[[50, 59, 80, 81, 56, 55, 40,81, 56, 55, 40,10]];
+				$scope.chart4.chartData.data=
+			[[100, 100, 100, 100, 100, 100, 100, 100, 100, 100,100,100],
+			[25, 48, 40, 100, 86, 27, 90,81, 56, 55, 40,20],
+			[50, 59, 80, 81, 56, 55, 40,81, 56, 55, 40,10]
+			];
+						$scope.chart4.text.sidebarTitle = 'Chau';
+			}
+			console.log('Chart4 ',$scope.chart4);
+		};
         init();
     });
 

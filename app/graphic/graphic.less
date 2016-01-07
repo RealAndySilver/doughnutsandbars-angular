@@ -56,14 +56,14 @@
 		}
 	}
 	.barContainer{
-		width: 640px;
+		width: 630px;
 		margin: 0;
 		//display: inline-block;
 		float: left;
 	}
 	.sidebar{
 		//display: inline-block;
-		width: 110px;
+		width: 120px;
 		background: #4c4c4c;
 		height: 53px;
 		float: left;
@@ -98,6 +98,34 @@
 	-ms-transform: rotate(180deg); /* IE 9 */
 	-webkit-transform: rotate(200deg); /* Chrome, Safari, Opera */
     transform: rotate(225deg);
+}
+.absoluteLine{
+	position: absolute;
+	margin-top: -299px;
+	margin-left: 11px;
+	width: 574px;
+	height: 276px;
+}
+.hidden{
+	visibility: hidden;
+}
+.dashedLine{
+	border:none;
+	border-top:3px dashed #333;
+	height:1px;
+	width: 600px;
+	position: absolute;
+	z-index: 2;
+	margin-left: 2px;
+	.text{
+		width: 150px;
+		height: 20px;
+		font-size: 10px;
+		margin-left: 610px;
+		margin-top: -10px;
+		color: #383838;
+		position: absolute;
+	}
 }
 .orangeBg{
 	background: #ffb702;
