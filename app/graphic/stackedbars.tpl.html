@@ -20,10 +20,11 @@
             <div class="panel-body">
                 <div class="chart-container">
 	                <div class="dashedLine" ng-style="dashedStyle"><span class="text">{{goalTitle}}</span></div>
-	                <canvas id="bar" class="chart chart-bar barsChart"
-			        chart-data="data" chart-labels="labels" chart-series="series" 
-					chart-colours="colours"
-					chart-options="options">
+					<canvas class="chart chart-stacked-bar stackedBarsChart" 
+							chart-data="data" 
+							chart-labels="labels" 
+							chart-colours="colours" 
+							chart-options="options">
 					</canvas>
 					<canvas id="line" ng-class="hidden" class="chart chart-line absoluteLine" chart-data="trendData"
 					  chart-labels="labels" chart-legend="false" chart-series="series" chart-colours="[{fillColor: 'rgba(0,0,0,0.2)'}]"

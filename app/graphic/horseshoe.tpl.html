@@ -11,9 +11,16 @@
 			</canvas>
 			
 	</div>
-	<div class="bottomTitle" ng-class="textColor">{{chart.text.bottomTitle}}</div>
-	<div class="bottomSubTitle">{{chart.text.bottomSubtitle}}</div>
-	<span ng-if="chart.css.type=='multi'">
+	<div class="bottomTitle" ng-class="textColor">
+		{{chart.text.bottomTitle}}
+	</div>
+	<div class="bottomTitleSubIndex" ng-class="textColor">
+		{{chart.text.units}}
+	</div>
+	<div class="bottomSubTitle">
+		{{chart.text.bottomSubtitle}} <span class="bottomSubTitleSubIndex">{{chart.text.units}}</span>
+	</div>
+	<span ng-if="chart.css.showBottomLabels">
 		<div class="bottomLabelsWrapper">
 			<span ng-repeat="label in chart.chartData.labels track by $index">
 				<div class="bottomLabel">
@@ -27,4 +34,5 @@
 		</div>
 		
 	</span>
+	
 </div>

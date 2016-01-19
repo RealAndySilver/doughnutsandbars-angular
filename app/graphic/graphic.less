@@ -17,8 +17,8 @@
 }
 
 .barsCard{
-	width: 778px;
-	height: 400px;
+	width: 777px;
+	height: 330px;
 	background: white;
 	color : #76ba0a;
 	overflow-x : hidden;
@@ -28,13 +28,13 @@
 	.header{
 		.left {
 			width: 55%;
-			height: 15%;
+			height: 12%;
 			padding-top: 17px;
 			float: left;
 		}
 		.right {
 			width: 45%;
-			height: 15%;
+			height: 12%;
 			padding-top: 20px;
 			float: right;
 		}
@@ -95,16 +95,32 @@
 	
 }
 .rotate{
-	-ms-transform: rotate(180deg); /* IE 9 */
-	-webkit-transform: rotate(200deg); /* Chrome, Safari, Opera */
+	-ms-transform: rotate(225deg); /* IE 9 */
+	-webkit-transform: rotate(225deg); /* Chrome, Safari, Opera */
     transform: rotate(225deg);
 }
 .absoluteLine{
 	position: absolute;
-	margin-top: -299px;
+	margin-top: -261px;
 	margin-left: 11px;
 	width: 574px;
-	height: 276px;
+	height: 238px;
+}
+.absoluteStackedBar{
+	position: absolute;
+	margin-top: -243px;
+	margin-left: 0px;
+	width: 601px;
+	height: 238px;
+}
+.barsChart{
+	width: 600px;
+	height: 260px;
+}
+.stackedBarsChart{
+	width: 600px;
+	height: 249px;
+	margin-top: 10px;
 }
 .hidden{
 	visibility: hidden;
@@ -149,6 +165,15 @@
 	font-weight: 500;
 	position: static;
 }
+.bottomTitleSubIndex{
+	font-size: 12px;
+	width: 90%;
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+	font-weight: 300;
+	position: static;
+}
 
 .bottomSubTitle{
 	font-size: 12px;
@@ -158,6 +183,9 @@
 	text-align: center;
 	font-weight: 300;
 	color : #333;
+}
+.bottomSubTitleSubIndex{
+	font-size: 8px;
 }
 .greenText{
 	color : #76ba0a;
@@ -270,7 +298,7 @@
 	left: 116px;
 }
 .bottomLabelsWrapper{
-	width:80%;
+	width: 60%;
 	height: 15px;
 	margin: 8px auto;
 	font-size: 12px;
